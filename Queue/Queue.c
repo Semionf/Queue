@@ -14,7 +14,7 @@ typedef struct Item {
 void Push(int, int);
 void PrintList();
 struct Item* Pop();
-
+void freeList();
 Item* head, * tail;
 int ID_COUNTER = 1;
 int main()
@@ -24,6 +24,12 @@ int main()
 	item = Pop();
 	printf("The %d id has been deleted\n", item->id);
 	free(item);
+	Push(2, 4);
+	Push(3, 5);
+	Push(4, 6);
+	Push(5, 7);
+	PrintList();
+	freeList();
 	PrintList();
 }
 
@@ -86,4 +92,19 @@ struct Item* Pop()
 	tail = tail->prev;
 	tail->next = NULL;
 	return temp;
+}
+
+void freeList()
+{
+	if (head)
+	{
+		Item* curr;
+		while (head)
+		{
+			curr = head;
+			head = head->next;
+			free(curr);
+		}
+		tail = head = NULL;
+	}
 }

@@ -1,3 +1,2 @@
-﻿  Source.c
-C:\Users\User\source\repos\Queue\Queue\Source.c(22,8): warning C4101: 'item': unreferenced local variable
+﻿  Queue.c
   Queue.vcxproj -> C:\Users\User\source\repos\Queue\x64\Debug\Queue.exe
